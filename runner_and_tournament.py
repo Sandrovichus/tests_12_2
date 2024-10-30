@@ -37,7 +37,8 @@ class Tournament:
             for participant in self.participants:
                 participant.run()
                 if participant.distance >= self.full_distance and participant.speed == max_speed:  # включаем доп.
-                    # условие для исключения случаев, когда медленный бегун оказывается пробежавшим быстрее медленного
+                    # условие для исключения случаев, когда самый медленный бегун оказывается пробежавшим быстрее
+                    # при дистанции равной или меньше удвоенного значения скорости самого медленного бегуна
                     finishers[place] = participant
                     place += 1
                     self.participants.remove(participant)
