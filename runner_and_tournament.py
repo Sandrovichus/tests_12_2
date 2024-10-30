@@ -33,10 +33,11 @@ class Tournament:
             speeds = []
             for i in self.participants:
                 speeds.append(i.speed)
-            max_speed = max(speeds)
+            max_speed = max(speeds)  # выявляем самого быстрого по скорости участника
             for participant in self.participants:
                 participant.run()
-                if participant.distance >= self.full_distance and participant.speed == max_speed:
+                if participant.distance >= self.full_distance and participant.speed == max_speed:  # включаем доп.
+                    # условие для исключения случаев, когда медленный бегун оказывается пробежавшим быстрее медленного
                     finishers[place] = participant
                     place += 1
                     self.participants.remove(participant)
