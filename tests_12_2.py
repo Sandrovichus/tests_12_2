@@ -38,13 +38,13 @@ class TournamentTest(unittest.TestCase):
 
     # дополнительный тесты для проверки, чтобы медленные бегуны не оказались на первых местах при маленьких дистанциях
     def test_run_4(self):
-        tournament3 = Tournament(6, self.runner_3, self.runner_2, self.runner_1)
-        self.all_results[4] = tournament3.start()
+        tournament4 = Tournament(6, self.runner_3, self.runner_2, self.runner_1)
+        self.all_results[4] = tournament4.start()
         self.assertTrue(self.all_results[4][max(self.all_results[4].keys())] == 'Ник')
 
     def test_run_5(self):
-        tournament3 = Tournament(1, self.runner_3, self.runner_2, self.runner_1)
-        self.all_results[5] = tournament3.start()
+        tournament5 = Tournament(1, self.runner_3, self.runner_2, self.runner_1)
+        self.all_results[5] = tournament5.start()
         self.assertTrue(self.all_results[5][max(self.all_results[5].keys())] == 'Ник')
 
 
